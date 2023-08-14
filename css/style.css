@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 1500px;
+  background-image: url(../img/hero2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.containers #nav {
+  grid-area: nav;
+  display: grid;
+  align-content: end;
+}
+
+.containers #nav .navbar-brand {
+  width: 3em;
+}
+
+.containers #nav .nav-item a {
+  width: 7em;
+  text-align: center;
+  border-radius: 4em;
+  margin-left: 0.3vw;
+  transition: 0.5s ease;
+}
+
+.containers #nav .nav-item a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.containers #nav .form-control {
+  width: 19vmax;
+  padding-left: 1em;
+}
+
+.containers #nav .navbar-brand img {
+  width: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.containers #nav .container-fluid * {
+  color: white;
+}
+
+.containers #leftbar {
+  grid-area: leftbar;
+}
+
+.containers #leftbar {
+  grid-area: leftbar;
+  display: grid;
+  grid-template-rows: 1fr 0.8fr;
+}
+
+.containers #leftbar * {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  row-gap: 12%;
+  color: white;
+}
+
+.containers #leftbar .trigger a {
+  width: 3em;
+}
+
+.containers #leftbar .imgs a {
+  width: 2em;
+}
+
+.containers #leftbar img {
+  width: 100%;
+  filter: invert(1);
+}
+
+.containers #midbar {
+  grid-area: midbar;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  row-gap: 12%;
+  color: white;
+}
+
+.containers #midbar .boxdot {
+  display: absolute;
+  margin-left: 1%;
+}
+
+.containers #midbar .transparent {
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: rgb(177, 249, 135);
+}
+
+.containers #midbar .find {
+  display: block;
+  width: fit-content;
+  margin-bottom: 10%;
+}
+
+.containers #midbar .find p {
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 2.5em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-variant: small-caps;
+  width: 11em;
+  height: 2.5em;
+  transition: 0.5s ease;
+  box-shadow: 0px 0px 2px 0.5px rgb(214, 214, 214);
+}
+
+.containers #midbar .find:hover p {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.containers #rightbar {
+  grid-area: rightbar;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  color: white;
+}
+
+.containers #rightbar .arrowlr img {
+  transition: 0.5s ease;
+}
+
+.containers #rightbar .arrowlr:hover img {
+  opacity: 0.5;
+}
+
+@media (min-width: 650px) {
+  .containers {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.8fr 4.5fr 5.8fr;
+    grid-template-rows: 0.5fr 8fr;
+    background-color: rgba(0, 0, 0, 0.5);
+    grid-template-areas:
+      "leftbar nav nav"
+      "leftbar midbar rightbar";
+  }
+}
+
+@media (max-width: 650px) {
+  .containers {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 0.11fr 10fr 0.1fr;
+    background-color: rgba(0, 0, 0, 0.5);
+    grid-template-areas:
+      "nav"
+      "midbar"
+      "leftbar";
+  }
+
+  .containers #nav {
+    grid-area: nav;
+  }
+
+  .containers #leftbar {
+    grid-area: leftbar;
+  }
+
+  .containers #midbar {
+    grid-area: midbar;
+  }
+
+  .containers #leftbar .trigger {
+    display: none;
+  }
+
+  .containers #leftbar * {
+    grid-auto-flow: column;
+  }
+
+  .containers #rightbar {
+    display: none;
+  }
+
+  .containers #midbar {
+    grid-area: midbar;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    row-gap: 12%;
+    color: white;
+  }
+
+  .containers #midbar .jumbotron {
+    margin: auto;
+    padding: 10px;
+  }
+}
+
+@media (max-height: 670px) {
+  .containers #midbar .boxdot {
+    display: none;
+  }
+
+  .containers #leftbar {
+    grid-area: leftbar;
+    display: grid;
+    grid-template-rows: 1 fr;
+  }
+
+  .containers #leftbar .trigger {
+    display: none;
+  }
+
+  .containers #rightbar h4 {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) and (max-height: 670px) {
+  .containers #midbar .boxdot {
+    display: none;
+  }
+
+  .containers #midbar .container p {
+    font-size: 14px;
+  }
+}
