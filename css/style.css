@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 1500px;
+  height: 150vh;
   background-image: url(../img/hero.jpg);
   background-position: center;
   background-size: cover;
@@ -63,11 +63,11 @@ body {
 }
 
 .containers #leftbar .trigger a {
-  width: 3em;
+  width: 3vmax;
 }
 
 .containers #leftbar .imgs a {
-  width: 2em;
+  width: 2vmax;
 }
 
 .containers #leftbar img {
