@@ -19,7 +19,7 @@
     <!-- Grid -->
     <div class="containers position-fixed">
       <div id="nav">
-        <nav class="navbar navbar-expand-lg p-3">
+        <nav class="navbar navbar-expand-md p-3">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
               <img src="img/logo.png" alt="Bootstrap" />
@@ -42,7 +42,7 @@
                   <a class="nav-link" href="#">Blog</a>
                 </li>
               </ul>
-              <form style="width: fit-content;" class="d-flex m-auto" role="search">
+              <form style="width: fit-content;" class="d-flex m-auto m-md-0" role="search">
                 <input class="form-control rounded-5 text-black" type="search" placeholder="Search" aria-label="Search" />
                 <a  href="#">
                   <img style="filter: brightness(0) invert(1); width: 3em" src="img/search.png" alt="mag" />
@@ -54,27 +54,33 @@
       </div>
       <div id="leftbar">
         <div class="trigger">
-          <a href="#">
+          <a id="trigger" href="#e">
             <img style="transform: rotate(90deg)" src="img/navbar.png" alt="navbar" />
           </a>
         </div>
         <div class="imgs">
-          <a href="#">
-            <img src="img/fb.png" alt="fb" />
+          <a href="#" class="position-relative">
+            <div id="barshow" class="position-fixed evenAnimation">
+            </div>
+            <img src="img/fb.png" alt="fb"/>
+            <p class="position-absolute info evenFade" style="left:160%;">Zidane</p>
           </a>
-          <a href="#">
+          <a href="#" class="position-relative">
             <img src="img/yt.png" alt="yt" />
+            <p class="position-absolute info evenFade" style="left:160%;">youtube.com/zidane</p>
           </a>
-          <a href="#">
+          <a href="#" class="position-relative">
             <img src="img/insta.png" alt="ig" />
+            <p class="position-absolute info evenFade" style="left:160%;">@yazidanehakim</p>
           </a>
-          <a href="#">
+          <a href="#" class="position-relative">
             <img src="img/twitter.png" alt="twitter" />
+            <p class="position-absolute info evenFade" style="left:160%;">@yazidanehakim17</p>
           </a>
         </div>
       </div>
       <div id="midbar">
-        <div class="jumbotron jumbotron-fluid mb-5 ms-md-5 ms-2-sm">
+        <div class="jumbotron jumbotron-fluid mb-5 ms-sm-5" style="z-index: -9999;">
           <img class="boxdot" style="width: 6em;filter:invert(1)" src="img/boxdot.png" alt="boxdot">
           <div class="container text-white mb-5">
             <h1 class="display-2 fw-bold text-uppercase">Explore</h1>
@@ -146,6 +152,29 @@
         duration: 500,
         once: true,
       });
+    </script>
+
+    <!-- Script Leftbar -->
+    <script  type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+    <script>
+      $(document).ready(function() {
+        var clicked = false;
+
+        $('#trigger').click(function() {
+            if(clicked) {
+                clicked = false;
+                $('#barshow').removeClass('oddAnimation').addClass('evenAnimation');
+                $('.info').removeClass('oddFade').addClass('evenFade');
+            }
+            else {
+                clicked = true;
+                $('#barshow').removeClass('evenAnimation').addClass('oddAnimation');
+                $('.info').removeClass('evenFade').addClass('oddFade');
+            }
+        });
+    });
     </script>
   </body>
 </html>

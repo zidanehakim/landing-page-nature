@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   height: 1500px;
-  background-image: url(../img/hero2.jpg);
+  background-image: url(../img/hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -91,8 +91,8 @@ body {
 
 .containers #midbar .transparent {
   color: rgba(0, 0, 0, 0);
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: rgb(177, 249, 135);
+  -webkit-text-stroke: 1.5px;
+  -webkit-text-stroke-color: rgb(185, 255, 145);
 }
 
 .containers #midbar .find {
@@ -132,7 +132,49 @@ body {
 }
 
 .containers #rightbar .arrowlr:hover img {
-  opacity: 0.5;
+  opacity: 0.5s;
+}
+
+.containers #leftbar #trigger {
+  transition: 0.5s ease;
+}
+
+.containers #leftbar #trigger:hover {
+  transform: scale(1.12);
+}
+
+.containers #leftbar #barshow {
+  transition: 0.5s ease;
+}
+
+.containers #leftbar .info {
+  transition: 0.6s ease;
+}
+
+.oddFade {
+  opacity: 1;
+}
+
+.evenFade {
+  opacity: 0;
+}
+
+.oddAnimation {
+  z-index: -9998;
+  top: 0;
+  left: 0;
+  right: 65vw;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.evenAnimation {
+  z-index: -9998;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 @media (min-width: 650px) {
@@ -144,7 +186,7 @@ body {
     grid-template-rows: 0.5fr 8fr;
     background-color: rgba(0, 0, 0, 0.5);
     grid-template-areas:
-      "leftbar nav nav"
+      "nav nav nav"
       "leftbar midbar rightbar";
   }
 }
@@ -199,9 +241,17 @@ body {
     margin: auto;
     padding: 10px;
   }
+
+  .containers #leftbar #barshow {
+    display: none;
+  }
+
+  .containers #leftbar .info {
+    display: none;
+  }
 }
 
-@media (max-height: 670px) {
+@media (max-height: 750px) {
   .containers #midbar .boxdot {
     display: none;
   }
@@ -219,14 +269,49 @@ body {
   .containers #rightbar h4 {
     display: none;
   }
+
+  .containers #leftbar #barshow {
+    display: none;
+  }
+
+  .containers #leftbar .info {
+    display: none;
+  }
 }
 
-@media (max-width: 350px) and (max-height: 670px) {
+@media (max-width: 350px) and (max-height: 770px) {
   .containers #midbar .boxdot {
     display: none;
   }
 
   .containers #midbar .container p {
     font-size: 14px;
+  }
+
+  #midbar,
+  #rightbar {
+    margin-top: 7em;
+  }
+}
+
+@media (max-width: 770px) {
+  .containers #nav nav {
+    position: fixed;
+    z-index: 9999;
+    margin-right: 100em;
+  }
+
+  .containers #nav nav .container-fluid {
+    width: 95vw;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .containers #nav nav form {
+    padding-bottom: 2em;
+  }
+
+  #midbar,
+  #rightbar {
+    margin-top: 7em;
   }
 }
